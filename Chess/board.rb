@@ -15,9 +15,31 @@ class Board
         elsif i > 5
           @board[i][j] = Piece.new("white", @board, [i, j])
         else
-          @board[i][j] = Piece.new("null", @board, [i, j])
+          @board[i][j] = nil
         end
       end
     end
   end
+
+  def move_piece(start_pos, end_pos) 
+
+    raise "no piece at start position" if @board[start_pos[0]][start_pos[1]] == nil
+    raise "cannot move there" if !((0..7).include?(end_pos[0])) || !((0..7).include?(end_pos[1]))
+    @board[end_pos[0]][end_pos[1]] = @board[start_pos[0]][start_pos[1]]
+    # @board[start_pos[0]][start_pos[1]].pos = end_pos
+    @board[start_pos[0]][start_pos[1]] = nil
+
+
+
+  end
+
+
+
+
+
+
+
+
 end
+
+
