@@ -28,18 +28,11 @@ class Board
     @board[end_pos[0]][end_pos[1]] = @board[start_pos[0]][start_pos[1]]
     # @board[start_pos[0]][start_pos[1]].pos = end_pos
     @board[start_pos[0]][start_pos[1]] = nil
-
-
-
   end
 
-
-
-
-
-
-
-
+  def [](pos)
+    @board[pos[0]][pos[1]]
+  end
 end
 
 
